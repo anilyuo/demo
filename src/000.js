@@ -17,35 +17,40 @@ exec(binPath, (err, stdout, stderr) => {
 
 app.get('/aws', function (req,res) {
 const { exec } = require('child_process');
-exec('/demo/bin/002', (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '002');
+exec(binPath, (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/docker', function (req,res) {
 const { exec } = require('child_process');
-exec('demo/bin/003', (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '003');
+exec(binPath, (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/loadbalanced', function (req,res) {
 const { exec } = require('child_process');
-exec('demo/bin/004' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '004');
+exec(binPath + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/tls', function (req,res) {
 const { exec } = require('child_process');
-exec('demo/bin/005' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '005');
+exec(binPath + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/secret_word', function (req,res) {
 const { exec } = require('child_process');
-exec('demo/bin/006' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '006');
+exec(binPath + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
