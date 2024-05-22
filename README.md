@@ -36,7 +36,8 @@ TLS Termination: The ALB terminates the TLS connection and forwards the decrypte
 
 Prerequisites
 
-AWS Account
+AWS Account![demo-2](https://github.com/anilyuo/demo/assets/168365194/abe49ba5-7fed-45b1-b0bc-8820e48d94e0)
+
 Terraform
 Docker
 Git
