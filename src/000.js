@@ -4,7 +4,7 @@ const port = 3000
 
 app.get('/', function (req, res) {
 const { exec } = require('child_process');
-exec('./demo/bin/001', (err, stdout, stderr) => {
+exec('/demo/bin/001', (err, stdout, stderr) => {
   if (err) {
     return res.send(`${stderr}`);
   }
@@ -14,7 +14,7 @@ exec('./demo/bin/001', (err, stdout, stderr) => {
 
 app.get('/aws', function (req,res) {
 const { exec } = require('child_process');
-exec('./demo/bin/002', (err, stdout, stderr) => {
+exec('/demo/bin/002', (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
