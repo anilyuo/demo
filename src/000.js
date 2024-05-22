@@ -2,12 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const path = require('path');
-
 app.get('/', function (req, res) {
 const { exec } = require('child_process');
-const scriptPath = path.join(__dirname, 'bin', '001');
-exec(scriptPath, (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/001', (err, stdout, stderr) => {
   if (err) {
     return res.send(`${stderr}`);
   }
@@ -17,35 +14,35 @@ exec(scriptPath, (err, stdout, stderr) => {
 
 app.get('/aws', function (req,res) {
 const { exec } = require('child_process');
-exec('quest-master/bin/002', (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/002', (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/docker', function (req,res) {
 const { exec } = require('child_process');
-exec('quest-master/bin/003', (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/003', (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/loadbalanced', function (req,res) {
 const { exec } = require('child_process');
-exec('quest-master/bin/004' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/004' + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/tls', function (req,res) {
 const { exec } = require('child_process');
-exec('quest-master/bin/005' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/005' + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
 
 app.get('/secret_word', function (req,res) {
 const { exec } = require('child_process');
-exec('./quest-master/bin/006' + JSON.stringify(req.headers), (err, stdout, stderr) => {
+exec('/home/ubuntu/demo/bin/006' + JSON.stringify(req.headers), (err, stdout, stderr) => {
   return res.send(`${stdout}`);
 });
 });
