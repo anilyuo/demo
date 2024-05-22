@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const path = require('path');
 
 app.get('/', function (req, res) {
 const { exec } = require('child_process');
-exec('/demo/bin/001', (err, stdout, stderr) => {
+const binPath = path.join(process.cwd(), 'bin', '001');
+
+exec(binPath, (err, stdout, stderr) => {
   if (err) {
     return res.send(`${stderr}`);
   }
