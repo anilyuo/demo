@@ -2,9 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const path = require('path');
+
 app.get('/', function (req, res) {
 const { exec } = require('child_process');
-exec('quest-master/bin/001', (err, stdout, stderr) => {
+const scriptPath = path.join(__dirname, 'bin', '001');
+exec(scriptPath, (err, stdout, stderr) => {
   if (err) {
     return res.send(`${stderr}`);
   }
