@@ -14,7 +14,7 @@ Node.js Code: The Node.js application code was modified slightly to ensure prope
 
 Docker
 
-Dockerfile: A Dockerfile was created to define the build instructions for the Docker image. It specifies the base image (e.g., Node.js Alpine), copies the application code, installs dependencies using npm install, and sets the entry point for the container (e.g., node 000.js).
+Dockerfile: A Dockerfile was created to define the build instructions for the Docker image. It specifies the base image copies the application code, installs dependencies using npm install, and sets the entry point for the container (e.g., node 000.js).
 
 
 Docker Image: The Docker image was built using the docker build command, and it was tagged with a suitable name and version (e.g., demo:latest).
