@@ -19,5 +19,7 @@ RUN chmod -R +x bin/
 # Expose the port on which the application will run
 EXPOSE 3000
 
+ENV SECRET_WORD= TwelveFactor
+
 # Start the application
 CMD ["node", "src/000.js"]
